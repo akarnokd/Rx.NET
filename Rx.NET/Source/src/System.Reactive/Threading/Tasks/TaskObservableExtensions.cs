@@ -356,9 +356,7 @@ namespace System.Reactive.Threading.Tasks
         public static Task<TResult> ToTask<TResult>(this IObservable<TResult> observable, CancellationToken cancellationToken)
         {
             if (observable == null)
-            {
                 throw new ArgumentNullException(nameof(observable));
-            }
 
             return observable.ToTask(cancellationToken, state: null);
         }
